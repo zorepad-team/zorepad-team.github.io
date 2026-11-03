@@ -1,0 +1,37 @@
+title: Зорепад
+description: Переклади ретро ігор українською
+lang: uk
+
+# Для сайту виду <user>.github.io baseurl залишається порожнім
+url: "https://zorepad-team.github.io"
+baseurl: ""
+
+# Підпис під назвою (поки вимкнено, розкоментуйте, щоб показати)
+# tagline: переклад ретро ігор українською
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+markdown: kramdown
+future: true
+
+collections:
+  translations:
+    output: true
+    permalink: /translations/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: translations
+    values:
+      layout: translation
+      section: translations
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - tmp
+  - vendor

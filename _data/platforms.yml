@@ -1,0 +1,7 @@
+# Платформи для фільтра. slug збігається з назвою теки в _translations/
+# та assets/translations. Для нової платформи також додайте
+# сторінку translations/<slug>/index.html (див. README).
+- slug: famicom
+  title: Famicom / NES
+- slug: game-boy
+  title: Game Boy

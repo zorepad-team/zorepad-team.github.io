@@ -1,0 +1,12 @@
+# section має збігатися з front matter `section` на сторінках розділу.
+# Нові розділи (новини, ромхаки) додайте сюди:
+- title: Переклади
+  url: /
+  section: translations
+
+# - title: Новини
+#   url: /news/
+#   section: news
+# - title: Ромхаки
+#   url: /romhacks/
+#   section: romhacks

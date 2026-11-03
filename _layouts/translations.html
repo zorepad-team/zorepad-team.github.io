@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{%- comment -%}
+  Список перекладів. Якщо в front matter сторінки задано `platform`,
+  показуються лише переклади цієї платформи.
+{%- endcomment -%}
+<nav class="filter" aria-label="Фільтр за платформою">
+  <a href="{{ '/' | relative_url }}"{% unless page.platform %} class="active"{% endunless %}>Усі</a>
+  {% for p in site.data.platforms %}
+    <a href="{{ '/translations/' | append: p.slug | append: '/' | relative_url }}"{% if page.platform == p.slug %} class="active"{% endif %}>{{ p.title }}</a>
+  {% endfor %}
+</nav>
+
+{% assign items = site.translations | sort: "date" | reverse %}
+{% if page.platform %}{% assign items = items | where: "platform", page.platform %}{% endif %}
+
+<ul class="grid">
+  {% for t in items %}
+    {% assign platform = site.data.platforms | where: "slug", t.platform | first %}
+    <li>
+      <a class="card" href="{{ t.url | relative_url }}">
+        <img src="{{ '/assets/translations/' | append: t.platform | append: '/' | append: t.slug | append: '/main.png' | relative_url }}" alt="Титульний екран {{ t.name }}" loading="lazy" width="256" height="224">
+        <span class="card-title">{{ t.name }}</span>
+        <span class="card-meta">{{ platform.title }} · <time datetime="{{ t.date | date: '%Y-%m-%d' }}">{{ t.date | date: "%d.%m.%Y" }}</time></span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

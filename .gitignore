@@ -1,0 +1,19 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+.bundle/
+vendor/
+
+# Claude Code (локальні налаштування)
+.claude/
+
+# Редактори та ОС
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini

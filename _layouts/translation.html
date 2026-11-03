@@ -1,0 +1,61 @@
+---
+layout: default
+section: translations
+---
+{% assign platform = site.data.platforms | where: "slug", page.platform | first %}
+{% assign dir = '/assets/translations/' | append: page.platform | append: '/' | append: page.slug %}
+
+<article class="translation">
+  <p class="breadcrumbs">
+    <a href="{{ '/' | relative_url }}">Переклади</a> /
+    <a href="{{ '/translations/' | append: page.platform | append: '/' | relative_url }}">{{ platform.title }}</a>
+  </p>
+
+  <h1>{{ page.title }}</h1>
+  <p class="meta">{{ platform.title }} · <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%d.%m.%Y" }}</time></p>
+
+  <img class="cover" src="{{ dir | append: '/main.png' | relative_url }}" alt="Титульний екран {{ page.name }}" width="256" height="224">
+
+  <div class="description">
+    {{ content }}
+  </div>
+
+  <p><a class="button" href="{{ page.download }}" rel="noopener">Завантажити переклад</a></p>
+
+  {% if page.screenshots.size > 0 %}
+    {%- comment -%}
+      Перегляд без JS і без запису в історію: радіокнопки + :checked.
+      Радіо shot-0 — «закрито», shot-N — відкритий N-й скріншот.
+    {%- endcomment -%}
+    <h2 id="screenshots">Скріншоти</h2>
+    <div class="gallery">
+      <input class="gallery-radio" type="radio" name="shot" id="shot-0" checked aria-label="Закрити перегляд">
+      <ul class="screenshots">
+        {% for shot in page.screenshots %}
+          <li>
+            <label for="shot-{{ forloop.index }}">
+              <img src="{{ dir | append: '/' | append: shot | relative_url }}" alt="Скріншот {{ forloop.index }} з гри {{ page.name }}" loading="lazy" width="256" height="224">
+            </label>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% assign total = page.screenshots.size %}
+      {% for shot in page.screenshots %}
+        {% assign i = forloop.index %}
+        {% if i > 1 %}{% assign prev = i | minus: 1 %}{% else %}{% assign prev = total %}{% endif %}
+        {% if i < total %}{% assign next = i | plus: 1 %}{% else %}{% assign next = 1 %}{% endif %}
+        <input class="gallery-radio" type="radio" name="shot" id="shot-{{ i }}" aria-label="Скріншот {{ i }}">
+        <div class="lightbox">
+          <label class="lightbox-close" for="shot-0"></label>
+          <img src="{{ dir | append: '/' | append: shot | relative_url }}" alt="Скріншот {{ i }} з гри {{ page.name }}">
+          {% if total > 1 %}
+            <label class="lightbox-nav prev" for="shot-{{ prev }}" title="Попередній"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 5l-7 7 7 7"/></svg></label>
+            <label class="lightbox-nav next" for="shot-{{ next }}" title="Наступний"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5l7 7-7 7"/></svg></label>
+          {% endif %}
+          <label class="lightbox-x" for="shot-0" title="Закрити"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></label>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</article>
