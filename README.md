@@ -15,7 +15,7 @@ bundle exec jekyll serve
 - `assets/translations/<платформа>/<slug>/` — `main.png` (титульний екран) і скріншоти `1.png`, `2.png`...
 - `_data/platforms.yml` — платформи для фільтра
 - `_data/navigation.yml` — пункти меню (новини, ромхаки додаються тут)
-- `assets/css/style.css` — усі стилі, `assets/fonts/` — шрифт назви
+- `assets/css/main.css` — усі стилі, `assets/fonts/` — шрифт назви
 
 ## Додати переклад
 

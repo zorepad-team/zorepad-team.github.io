@@ -400,3 +400,41 @@ img {
   top: 16px;
   right: 16px;
 }
+
+/* Спойлери в описі перекладу (<details>) */
+.description details {
+  margin: 0 0 1em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.description summary {
+  padding: 10px 16px;
+  color: var(--heading);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.description summary:hover {
+  background: var(--surface-hover);
+  border-radius: var(--radius);
+}
+
+.description details[open] > summary {
+  border-bottom: 1px solid var(--border);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.description details > :not(summary) {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.description details > :nth-child(2) {
+  margin-top: 12px;
+}
+
+.description details > :last-child {
+  margin-bottom: 12px;
+}

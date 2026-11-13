@@ -1,0 +1,8 @@
+# Текстові файли зберігаються і лишаються з LF
+* text=auto eol=lf
+
+# Бінарні файли
+*.png binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
