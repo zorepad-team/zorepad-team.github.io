@@ -2,7 +2,7 @@
 title: Nekketsu Kouha Kunio-kun - український переклад
 name: Nekketsu Kouha Kunio-kun
 platform: famicom
-date: '2024-10-11'
+date: '2023-03-26'
 download: https://drive.google.com/drive/folders/1SaTBNgwrK3p2eDhD439apXeNshflkoXe
 screenshots:
 - 1.png

@@ -2,7 +2,7 @@
 title: Contra - український переклад
 name: Contra
 platform: famicom
-date: '2025-06-07'
+date: '2022-06-10'
 download: https://drive.google.com/drive/folders/1-fuQPCW7MqseZB29McTLaJEW0pl7kryH
 screenshots:
 - 1.png

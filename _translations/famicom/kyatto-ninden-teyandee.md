@@ -2,7 +2,7 @@
 title: Kyatto Ninden Teyandee - український переклад
 name: Kyatto Ninden Teyandee
 platform: famicom
-date: '2025-11-01'
+date: '2025-07-05'
 download: https://drive.google.com/drive/folders/1IiQPmSG0ToS_J_ADLQ7iybHDO9NvWHsH
 screenshots:
 - 1.png

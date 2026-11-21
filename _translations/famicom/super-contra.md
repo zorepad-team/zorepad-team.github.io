@@ -2,7 +2,7 @@
 title: Super C - український переклад
 name: Super C
 platform: famicom
-date: '2022-07-01'
+date: '2022-06-10'
 download: https://drive.google.com/drive/folders/1Vublum3Am4nPF7D3BzhuDZejzNf0pZSh
 screenshots:
 - 1.png

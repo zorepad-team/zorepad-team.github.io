@@ -2,7 +2,7 @@
 title: Contra Force - український переклад
 name: Contra Force
 platform: famicom
-date: '2022-07-01'
+date: '2022-06-29'
 download: https://drive.google.com/drive/folders/14gdO5knY14lfoDDfa6mYan7sGEFkqoil
 screenshots:
 - 1.png

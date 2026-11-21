@@ -2,7 +2,7 @@
 title: Kage - український переклад
 name: Kage
 platform: famicom
-date: '2025-08-08'
+date: '2022-09-03'
 download: https://drive.google.com/drive/folders/1Qb752rVLA2MtaCgrZZv58DO0QmTRs4jq
 screenshots:
 - 1.png
